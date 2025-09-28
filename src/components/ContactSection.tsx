@@ -1,5 +1,3 @@
-"use client"
-
 import type React from "react"
 import { useState } from "react"
 import { Mail, Phone, MapPin, Send } from "lucide-react"
@@ -12,13 +10,17 @@ export function ContactSection() {
   })
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle form submission here
-    console.log("Form submitted:", formData)
-    // Reset form
-    setFormData({ name: "", email: "", message: "" })
-    alert("Thank you for your message! I'll get back to you soon.")
-  }
+  e.preventDefault();
+
+  const subject = encodeURIComponent("New message from portfolio");
+  const body = encodeURIComponent(
+    `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+  );
+
+  window.location.href = `mailto:virajdilshan2019@gmail.com?subject=${subject}&body=${body}`;
+
+};
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -28,7 +30,7 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="py-20 bg-gray-900">
+    <section id="contact" className="py-20 bg-zinc-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Contact</h2>
@@ -56,7 +58,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <h4 className="text-white font-medium">Email</h4>
-                  <p className="text-gray-400">viraj.dilshan@example.com</p>
+                  <p className="text-gray-400">virajdilshan2019@gmail.com</p>
                 </div>
               </div>
 
@@ -66,7 +68,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <h4 className="text-white font-medium">Phone</h4>
-                  <p className="text-gray-400">+94 77 123 4567</p>
+                  <p className="text-gray-400">+94 74 109 2019</p>
                 </div>
               </div>
 
@@ -76,14 +78,14 @@ export function ContactSection() {
                 </div>
                 <div>
                   <h4 className="text-white font-medium">Location</h4>
-                  <p className="text-gray-400">Colombo, Sri Lanka</p>
+                  <p className="text-gray-400">Matara, Sri Lanka</p>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Contact Form */}
-          <div className="bg-gray-800 rounded-xl p-8">
+          <div className="bg-zinc-900 rounded-xl p-8">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
@@ -96,7 +98,7 @@ export function ContactSection() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-3 bg-zinc-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="Your name"
                 />
               </div>
@@ -112,7 +114,7 @@ export function ContactSection() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-3 bg-zinc-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="your.email@example.com"
                 />
               </div>
@@ -128,7 +130,7 @@ export function ContactSection() {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+                  className="w-full px-4 py-3 bg-zinc-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
                   placeholder="Tell me about your project or just say hello!"
                 />
               </div>

@@ -6,7 +6,7 @@ import "./App.css"
 
 function App() {
   return (
-    <div className="relative pt-20">
+    <div className="relative">
       <Navigation />
       <HeroSection />
       <ProjectsSection />

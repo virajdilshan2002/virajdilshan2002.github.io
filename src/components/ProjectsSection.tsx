@@ -1,38 +1,34 @@
-import { ExternalLink, Github } from "lucide-react"
+import { Github } from "lucide-react"
 
 const projects = [
   {
-    title: "E-Commerce Platform",
+    title: "PingMe Chat App",
     description:
-      "A full-stack e-commerce solution built with React, Node.js, and PostgreSQL. Features include user authentication, payment processing, and admin dashboard.",
-    image: "/e-commerce-website-dashboard.jpg",
-    technologies: ["React", "Node.js", "PostgreSQL", "Stripe"],
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
+      "A real-time chat application with user authentication.",
+    image: "/pingme.jpg",
+    technologies: ["ReactNative", "TypeScript", "Expo", "Firebase"],
+    githubUrl: "https://github.com/virajdilshan2002/PingMe.git"
   },
   {
-    title: "Task Management App",
+    title: "PingMe Chat App",
     description:
-      "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-    image: "/task-management-application-interface.jpg",
-    technologies: ["React", "TypeScript", "Socket.io", "MongoDB"],
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
-  },
-  {
-    title: "Weather Analytics Dashboard",
+      "A real-time chat application with user authentication.",
+    image: "/pingme.jpg",
+    technologies: ["ReactNative", "TypeScript", "Expo", "Firebase"],
+    githubUrl: "https://github.com/virajdilshan2002/PingMe.git"
+  },{
+    title: "PingMe Chat App",
     description:
-      "A comprehensive weather analytics dashboard with interactive charts, forecasting, and location-based weather data visualization.",
-    image: "/weather-analytics-dashboard-with-charts.jpg",
-    technologies: ["React", "D3.js", "Python", "FastAPI"],
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
-  },
+      "A real-time chat application with user authentication.",
+    image: "/pingme.jpg",
+    technologies: ["ReactNative", "TypeScript", "Expo", "Firebase"],
+    githubUrl: "https://github.com/virajdilshan2002/PingMe.git"
+  }
 ]
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="py-20 bg-gray-800">
+    <section id="projects" className="py-20 bg-zinc-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Featured Projects</h2>
@@ -56,7 +52,7 @@ export function ProjectsSection() {
                 />
               </div>
 
-              <div className="p-6">
+              <div className="p-5 cursor-default">
                 <h3 className="text-xl font-bold text-white mb-3">{project.title}</h3>
 
                 <p className="text-gray-400 mb-4 leading-relaxed">{project.description}</p>
@@ -71,27 +67,15 @@ export function ProjectsSection() {
                     </span>
                   ))}
                 </div>
-
-                <div className="flex gap-4">
                   <a
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors duration-200"
+                    className="flex items-center gap-2 cursor-pointer text-gray-400 hover:text-white transition-colors duration-200"
                   >
                     <Github size={18} />
                     Code
                   </a>
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors duration-200"
-                  >
-                    <ExternalLink size={18} />
-                    Live Demo
-                  </a>
-                </div>
               </div>
             </div>
           ))}
