@@ -67,7 +67,7 @@ export function HeroSection() {
                   <img src={linkedin} alt="LinkedIn" className="w-5 h-5" />
                 </a>
                 <a
-                  href="mailto:viraj@example.com"
+                  href="mailto:virajdilshan2019@gmail.com"
                   className="p-3 bg-gray-800 hover:bg-gray-700 rounded-xl transition-colors duration-200"
                 >
                   <img src={email} alt="Email" className="w-5 h-5" />
