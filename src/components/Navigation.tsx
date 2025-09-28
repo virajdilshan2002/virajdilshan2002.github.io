@@ -1,7 +1,7 @@
-"use client"
-
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
+import userImage from "../assets/images/profile.jpg"
+import "../App.css"
 
 const navItems = [
   { name: "About", href: "#about" },
@@ -27,7 +27,7 @@ export function Navigation() {
           {/* Logo and Profile */}
           <div className="flex items-center space-x-3">
             <img
-              src="/software-engineer-headshot.png"
+              src={userImage}
               alt="Profile"
               className="w-10 h-10 rounded-full object-cover border-2 border-blue-500"
             />

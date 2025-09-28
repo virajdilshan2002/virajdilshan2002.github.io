@@ -1,6 +1,5 @@
-"use client"
-
 import { Download, Github, Linkedin, Mail } from "lucide-react"
+import userImage from "../assets/images/profile.jpg"
 
 export function HeroSection() {
   const handleDownloadCV = () => {
@@ -83,7 +82,7 @@ export function HeroSection() {
           <div className="flex justify-center lg:justify-end">
             <div className="relative">
               <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-blue-500 shadow-2xl">
-                <img src="/software-engineer-headshot.png" alt="Viraj Dilshan" className="w-full h-full object-cover" />
+                <img src={userImage} alt="Viraj Dilshan" className="w-full h-full object-cover" />
               </div>
               <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-blue-600 rounded-full flex items-center justify-center">
                 <span className="text-2xl">👨‍💻</span>
