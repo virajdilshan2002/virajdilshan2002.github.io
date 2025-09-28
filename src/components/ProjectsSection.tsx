@@ -1,28 +1,31 @@
-import { Github } from "lucide-react"
+import { ExternalLink, Github } from "lucide-react"
 
 const projects = [
   {
     title: "PingMe Chat App",
     description:
-      "A real-time chat application with user authentication.",
+      "PingMe is a React Native chat app built with Expo SDK 54, Expo Router, and Firebase (Auth, Firestore, Storage)",
     image: "/pingme.jpg",
     technologies: ["ReactNative", "TypeScript", "Expo", "Firebase"],
-    githubUrl: "https://github.com/virajdilshan2002/PingMe.git"
+    githubUrl: "https://github.com/virajdilshan2002/PingMe.git",
+    liveUrl: ""
   },
   {
-    title: "PingMe Chat App",
+    title: "Digital Art Gallery",
     description:
-      "A real-time chat application with user authentication.",
-    image: "/pingme.jpg",
-    technologies: ["ReactNative", "TypeScript", "Expo", "Firebase"],
-    githubUrl: "https://github.com/virajdilshan2002/PingMe.git"
+      "This is a web-based platform designed to help artists showcase and sell their hand-painted and handcrafted artworks.",
+    image: "/digitalartgallery.png",
+    technologies: ["SpringBoot", "Bootstrap", "Firebase"],
+    githubUrl: "https://github.com/virajdilshan2002/Digital-Art-Gallery.git",
+    liveUrl: "https://youtu.be/0-JQQzbyqPQ"
   },{
-    title: "PingMe Chat App",
+    title: "Strategic Growth Analysis",
     description:
-      "A real-time chat application with user authentication.",
-    image: "/pingme.jpg",
-    technologies: ["ReactNative", "TypeScript", "Expo", "Firebase"],
-    githubUrl: "https://github.com/virajdilshan2002/PingMe.git"
+      "A group project analyzing the strategic growth of a company using various business analysis tools and frameworks.",
+    image: "/analyzing.png",
+    technologies: ["Python", "Business Analysis", "Data Visualization"],
+    githubUrl: "https://github.com/dbhagya200/ITS2122-PythonModule-GroupProject.git",
+    liveUrl: ""
   }
 ]
 
@@ -34,7 +37,7 @@ export function ProjectsSection() {
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Featured Projects</h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
             Here are some of my recent projects that showcase my skills in full-stack development, UI/UX design, and
-            problem-solving.
+            analysis.
           </p>
         </div>
 
@@ -67,15 +70,28 @@ export function ProjectsSection() {
                     </span>
                   ))}
                 </div>
+                  <div className="flex gap-4">
                   <a
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 cursor-pointer text-gray-400 hover:text-white transition-colors duration-200"
+                    className="flex items-center gap-2 bg-gray-900 px-2 py-1 rounded-3xl text-gray-400 hover:text-white drop-shadow-2xl hover:drop-shadow-blue-800 transition-colors duration-200"
                   >
                     <Github size={18} />
                     Code
                   </a>
+                  {project.liveUrl == "" ? null : (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 bg-red-600/90 px-2 py-1 rounded-3xl font-medium text-white drop-shadow-2xl hover:drop-shadow-red-500 transition-colors duration-200"
+                    >
+                      <ExternalLink size={18} />
+                      Demo
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
           ))}

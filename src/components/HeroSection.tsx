@@ -90,11 +90,11 @@ export function HeroSection() {
 
           {/* Profile Image */}
           <div className="flex justify-center lg:justify-end">
-            <div className="relative">
-              {/* 🔹 Glowing blurred background circle */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 via-zinc-600 to-blue-500 blur-3xl opacity-70 animate-pulse"></div>
+            <div className="relative animate-rotate-border bg-conic/[from_var(--border-angle)] from-black via-blue-500 to-black p-px rounded-full">
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600 via-black to-blue-600 blur-3xl opacity-70 animate-spin-slow"></div>
 
-              <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-blue-500 shadow-2xl relative z-10">
+
+              <div className="w-80 h-80 rounded-full overflow-hidden  border-blue-400/90 shadow-2xl relative z-10">
                 <img
                   src={userImage}
                   alt="Viraj Dilshan"
@@ -102,12 +102,8 @@ export function HeroSection() {
                 />
               </div>
 
-              {/* Small circle with emoji */}
-              <div className="absolute -bottom-0 -right-0 w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center z-20">
-                <span className="text-xl">👨‍💻</span>
-              </div>
             </div>
-          </div>
+          </div>  
         </div>
       </div>
     </section>
